@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script>
+        let socket=io('ws://localhost:5000');
+  let el;
+  socket.on('time',(timeString)=>{
+  let el=document.getElementById('server-time');
+  el.innerHTML='Server time: '+timeString;
+  });
+    </script>
+</head>
+<body>
+    <h1>Just chill</h1>
+    <p id='server-time'></p>
+</body>
+</html>
